@@ -8,7 +8,7 @@ void inpu()
 {
     while (true)
     {
-    count << "Masukan Jumlah Data pada Array : ";
+    cout << "Masukan Jumlah Data pada Array : ";
     cin >> n;
 
     if (n <= 20)
@@ -17,17 +17,17 @@ void inpu()
     }
     else
     {
-        count << "\nArray yang anda masukan maksimal 20 Elemen.\n";
+        cout << "\nArray yang anda masukan maksimal 20 Elemen.\n";
     }
     }
-    count << endl;
-    count << "=================" << endl;
-    count << "Masukan Elemen Array" << endl;
-    count << "=================" << endl;
+    cout << endl;
+    cout << "=================" << endl;
+    cout << "Masukan Elemen Array" << endl;
+    cout << "=================" << endl;
     
     for (int i = 0; i < n; i++)
     {
-    count << "Data ke-" << (i + 1) << ": ";
+    cout << "Data ke-" << (i + 1) << ": ";
     cin >> arr[i];
     }
      
@@ -53,4 +53,21 @@ void InsertionSort()
         arr[j + 1] = temp;
     }
     
+}
+
+void display()
+{
+    cout << endl;
+    cout << "====================" << endl;
+    cout << "Total Pass = " << n - 1 << endl;
+    cout << "====================" << endl;
+    cout << "Element Array yang telah tersusun" << endl;
+    cout << "====================" << endl;
+
+    for (int  j = 0; j < n; j++)
+    {
+       cout << arr[j] << 
+    }
+    
+
 }
