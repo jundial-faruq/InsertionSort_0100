@@ -4,51 +4,51 @@ using namespace std;
 int arr[20];
 int n;
 
-void inpu()
+void input()
 {
     while (true)
     {
-    cout << "Masukan Jumlah Data pada Array : ";
-    cin >> n;
+       cout << "Masukan jumlah Data pada Array : ";
+       cin >> n;
 
-    if (n <= 20)
-    {
-    break;
-    }
-    else
-    {
+       if (n <= 20)
+       {
+        break;
+       }
+       else
+       {
         cout << "\nArray yang anda masukan maksimal 20 Elemen.\n";
-    }
+
+       }
     }
     cout << endl;
-    cout << "=================" << endl;
+    cout << "===================" << endl;
     cout << "Masukan Elemen Array" << endl;
-    cout << "=================" << endl;
-    
+    cout << "===================" << endl;
+
     for (int i = 0; i < n; i++)
     {
-    cout << "Data ke-" << (i + 1) << ": ";
-    cin >> arr[i];
+        cout << "Data ke-" << (i + 1) << " : ";
+        cin >> arr[i];
     }
-     
+
+
 }
+
 
 void InsertionSort()
 {
     int temp;
     int j, i;
-
-    for (i = 1; i <= n - 1;  i++)
+    
+    for (i = 1; i <= n - 1; i++)
     {
-        
         temp = arr[i];
-
-        j = i - 1;
+        j = i - 1; // sebelumnya gaada
 
         while (j >= 0 && arr[j] > temp)
         {
-            arr[j + i] = arr[j];
-            j--;
+            arr[j + 1] = arr[j];
         }
         arr[j + 1] = temp;
     }
@@ -58,16 +58,26 @@ void InsertionSort()
 void display()
 {
     cout << endl;
-    cout << "====================" << endl;
-    cout << "Total Pass = " << n - 1 << endl;
-    cout << "====================" << endl;
-    cout << "Element Array yang telah tersusun" << endl;
-    cout << "====================" << endl;
+    cout << "=====================" << endl;
+    cout << "Total Pass =" << n - 1 << endl;
+    cout << "=====================" << endl;
+    cout << "Elemen Array yang telah tersusun" << endl;
+    cout << "=====================" << endl;
 
-    for (int  j = 0; j < n; j++)
+    for (int j = 0; j < n; j++)
     {
-       cout << arr[j] << 
+        cout << arr[j] << endl;
     }
     
+    cout << endl;
+}
 
+
+int main()
+{
+    input();
+    InsertionSort();
+    display();
+    system("pause");
+    return 0;
 }
